@@ -27,6 +27,8 @@ Background: movies have been added to database
     Then I should see "Amelie" before "Chicken Run"
     And I should see "Aladdin" before "Amelie"
     And I should see "The Terminator" before "When Harry Met Sally"
+    And I should see "2001: A Space Odyssey" before "The Help"
+    And I should see "The Incredibles" before "The Terminator"
 
   Scenario: sort movies in increasing order of release date
     When I follow "Release Date"

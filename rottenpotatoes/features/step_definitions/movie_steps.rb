@@ -16,9 +16,9 @@ end
 
 When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 
-  rating_list.split(/,\s*/).each { |rating|  # , one or more spaces characters
+  rating_list.split(/,\s*/).each { |rating|
     if uncheck
-      uncheck "ratings_#{rating}" # checkboxes id = ratings_G
+      uncheck "ratings_#{rating}"
     else
       check "ratings_#{rating}"
     end

@@ -34,6 +34,7 @@ Background: movies have been added to database
     And I should see "When Harry Met Sally"
     And I should see "The Incredibles"
     And I should see "Raiders of the Lost Ark"
+    And I should see "Amelie"
 
 
     And I should not see "Aladdin"
@@ -42,7 +43,16 @@ Background: movies have been added to database
     And I should not see "2001: A Space Odyssey"
     And I should not see "Chicken Run"
 
+    When I follow "Movie Title"
+    And I check the following ratings: R
+    And I press "Refresh"
+    Then I should be on the home page
+    And I should see "Amelie" before "The Terminator"
+    And I should see "Amelie" before "When Harry Met Sally"
+    And I should see "The Terminator" before "When Harry Met Sally"
+
   Scenario: all ratings selected
-    When I check the following ratings: PG, R, PG-13, G
+    When I check the following ratings: PG, R, PG-13, G, NC-17
     And I press "Refresh"
     Then I should see all the movies
+
